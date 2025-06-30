@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'role' => 'pendaftar'
         ];
         $res = supabase_request("POST", "/rest/v1/users", $data);
-        send_email($email, "Akun Berhasil Dibuat", "Akun Anda sudah aktif. Silakan login.");
+        send_email($email, "Akun Berhasil Dibuat", "Akun Anda telah berhasil dibuat. Silakan login untuk melanjutkan.");
         header("Location: index.php");
         exit();
     }

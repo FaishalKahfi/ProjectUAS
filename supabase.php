@@ -1,6 +1,6 @@
 <?php
-define('SUPABASE_URL', 'https://mxajscgaszabmustddfq.supabase.co');
-define('SUPABASE_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im14YWpzY2dhc3phYm11c3RkZGZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk1Mjg5MTQsImV4cCI6MjA2NTEwNDkxNH0.jyueIxwoYJf3sbDra98uN3vD6MYrvX_ZWN6hwyPzD38');
+define('SUPABASE_URL', 'https://oedivlvixbbovizhavwa.supabase.co');
+define('SUPABASE_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9lZGl2bHZpeGJib3ZpemhhdndhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTEyNTgzMDcsImV4cCI6MjA2NjgzNDMwN30.XpV1qEVjwqfepbC6AcBVkO-u-9Mf1ttszf4pOYZ11Ic');
 
 // Helper request ke Supabase REST
 function supabase_request($method, $endpoint, $data = null) {

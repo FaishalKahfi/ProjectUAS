@@ -9,12 +9,12 @@ function send_email($to, $subject, $body) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com'; // sesuaikan
         $mail->SMTPAuth = true;
-        $mail->Username = 'faishalkahfi041004@gmail.com';
+        $mail->Username = 'kampusmerdeka@gmail.com';
         $mail->Password = 'yvco skgn rdjq ozes';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
-        $mail->setFrom('faishalkahfi041004@gmail.com', 'Admin Pendaftaran');
+        $mail->setFrom('kampusmerdeka@gmail.com', 'Kampus Merdeka');
         $mail->addAddress($to);
         $mail->isHTML(true);
         $mail->Subject = $subject;
