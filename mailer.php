@@ -1,27 +1,29 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require 'vendor/autoload.php';
 
 function send_email($to, $subject, $body) {
     $mail = new PHPMailer(true);
     try {
+        $mail->CharSet = 'UTF-8';
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com'; // sesuaikan
+        $mail->Host = $_ENV['MAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Username = 'kampusmerdeka@gmail.com';
-        $mail->Password = 'yvco skgn rdjq ozes';
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = 587;
+        $mail->Username = $_ENV['MAIL_USERNAME'];
+        $mail->Password = $_ENV['MAIL_PASSWORD'];
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = (int)$_ENV['MAIL_PORT'];
 
-        $mail->setFrom('kampusmerdeka@gmail.com', 'Kampus Merdeka');
+        $mail->setFrom($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME']);
         $mail->addAddress($to);
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body    = $body;
+        
         $mail->send();
+        return true;
     } catch (Exception $e) {
-        // error handling (log / tampilkan)
+        error_log("Mailer Error: {$mail->ErrorInfo}");
+        return false;
     }
 }
-?>
